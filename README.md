@@ -4,9 +4,9 @@
 
 This project demonstrates how to use **Power Automate**, **Excel Online**, and **Outlook** to identify formula validation errors that may not always be detected in Excel’s **Agent Mode**.
 
-While Agent Mode introduces AI-driven assistance in Excel, it currently has limitations in financial modeling scenarios, especially where **formula dependencies** and **reconciliation checks** are involved.
+While Agent Mode introduces AI-driven assistance in Excel, it has limitations in financial modeling, especially for **formula dependencies** and **reconciliation checks**.
 
-This project aims to close that gap by creating a validation automation workflow.
+This project creates a validation automation workflow to fill that gap.
 
 ---
 
@@ -23,26 +23,26 @@ This project aims to close that gap by creating a validation automation workflow
 
 ## Power Automate Flow Logic
 
-1. **Trigger:**  
+1. **Trigger**  
    Starts when an Excel file in OneDrive is modified.
 
-2. **List Rows:**  
+2. **List Rows**  
    Retrieves validation data from a table in Excel.
 
-3. **Filter Array:**  
+3. **Filter Array**  
    Keeps only rows where `Status = "Error"`.
 
-4. **Initialize Variable:**  
+4. **Initialize Variable**  
    Creates a string variable `ErrorSummary` for formatted results.
 
-5. **Apply to Each:**  
+5. **Apply to Each**  
    Adds each failed check (with timestamp) to the summary list.
 
-6. **Condition:**  
+6. **Condition**  
    - If errors exist → Sends an email alert.  
    - If no errors → Ends quietly.
 
-7. **Send Email:**  
+7. **Send Email**  
    Sends an HTML email with **bolded** and **red-highlighted** error details.
 
 ---
@@ -51,34 +51,47 @@ This project aims to close that gap by creating a validation automation workflow
 
 **Subject:** Financial Model Validation Errors Found  
 
-**Body:**  
-A validation error was found in your financial model.  
-
-
-**HTML Version (with red highlights):**
-<span style="color:#d9534f;">Net Income Flow-through: Error (11/04/2025 03:30)</span>  
-<span style="color:#d9534f;">Test Error Trigger: Error (11/04/2025 03:30)</span>
+**Body (HTML version with red highlights):**  
+<span style="color:#d9534f;">A validation error was found in your financial model.</span><br>
+<span style="color:#d9534f;">Net Income Flow-through: Error (11/04/2025 03:30)</span><br>
+<span style="color:#d9534f;">Test Error Trigger: Error (11/04/2025 03:30)</span><br>
+Please review the Excel model and correct the issues.
 
 ---
 
 ## Flow Setup Example
 
-### Connection References
-![Connection References](Screenshot%202025-11-05%20at%2004.24.07.png)
+### Folder Structure
+![Folder Structure](https://raw.githubusercontent.com/olufemiolamoyegun/excel-formula-integrity-validation/main/Folder%20Structure)
 
-### Flow Steps
-![Power Automate Flow](Screenshot%202025-11-05%20at%2004.24.44.png)
+### Email Alert Example
+![Email Alert](https://raw.githubusercontent.com/olufemiolamoyegun/excel-formula-integrity-validation/main/Email%20Alert.png)
+
+### Power Automate Flow
+![Power Automate Flow](https://raw.githubusercontent.com/olufemiolamoyegun/excel-formula-integrity-validation/main/Power%20Automate%20Flow.png)
+
+---
+
+## Usage
+
+1. Upload your Excel file to OneDrive and ensure the validation table exists.  
+2. Update the Power Automate flow to point to the correct Excel file and table.  
+3. Ensure the “Filter Array” step checks `Status = "Error"`.  
+4. Save and test the flow. Any validation errors will trigger an email alert.  
+5. Optional: Customize the email template to include additional formatting or recipients.
 
 ---
 
 ## Why This Matters
 
-While **Agent Mode** in Excel boosts productivity, it can:
+Excel’s **Agent Mode** can:
+
 - Miss formula linkage or integrity issues  
 - Misinterpret dependent relationships  
-- Modify workbooks directly without validation records  
+- Modify workbooks without validation records  
 
 This Power Automate flow helps:
+
 - Maintain formula integrity  
 - Provide real-time alerts  
 - Preserve a transparent audit trail  
@@ -94,6 +107,7 @@ This Power Automate flow helps:
 
 ## Author
 
-Created by **[Olufemi Olamoyegun]**  
-Exploring automation workflows that strengthen Excel’s reliability for financial modeling and validation.
+Created by **Olufemi Olamoyegun**  
+Exploring automation workflows that strengthen Excel’s reliability for financial modelling and validation.
+
 
