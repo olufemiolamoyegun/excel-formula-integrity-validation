@@ -54,43 +54,46 @@ This project aims to close that gap by creating a validation automation workflow
 **Body:**  
 A validation error was found in your financial model.  
 
-Errors:  
 
-<span style="color:#d9534f; font-weight:bold;">Net Income Flow-through: Error (11/04/2025 03:30)</span>  
-<span style="color:#d9534f; font-weight:bold;">Test Error Trigger: Error (11/04/2025 03:30)</span>  
-
-Please review the Excel model and correct the issues.
+**HTML Version (with red highlights):**
+<span style="color:#d9534f;">Net Income Flow-through: Error (11/04/2025 03:30)</span>  
+<span style="color:#d9534f;">Test Error Trigger: Error (11/04/2025 03:30)</span>
 
 ---
 
-## Why It Matters
+## Flow Setup Example
 
-According to [Microsoft Support: FAQ about Agent Mode in Excel (Frontier)](https://support.microsoft.com/en-us/office/faq-about-agent-mode-in-excel-frontier):
+### Connection References
+![Connection References](Screenshot%202025-11-05%20at%2004.24.07.png)
 
-> “Agent Mode in Excel uses AI to generate suggestions and results. While powerful, it can sometimes make mistakes, misinterpret information, or produce inaccurate outcomes.”
-
-This project provides a **real-time validation layer** outside of Agent Mode — improving accuracy and maintaining audit trails in financial models.
-
----
-
-## Screenshots
-
-- **Flow Overview:**  
-  ![Flow Overview](./screenshots/flow-overview.png)
-
-- **Email Output:**  
-  ![Email Output](./screenshots/email-output.png)
+### Flow Steps
+![Power Automate Flow](Screenshot%202025-11-05%20at%2004.24.44.png)
 
 ---
 
-## Next Steps
+## Why This Matters
 
-Part Two will focus on **testing the Formula Integrity Flow with Agent Mode in Excel** to evaluate:
-- How AI-driven results compare to Power Automate validation outcomes.
-- Which error scenarios are flagged or missed.
-- How integration could evolve for enterprise-grade financial checks.
+While **Agent Mode** in Excel boosts productivity, it can:
+- Miss formula linkage or integrity issues  
+- Misinterpret dependent relationships  
+- Modify workbooks directly without validation records  
+
+This Power Automate flow helps:
+- Maintain formula integrity  
+- Provide real-time alerts  
+- Preserve a transparent audit trail  
 
 ---
 
-## License
-MIT License © 2025
+## References
+
+- [Microsoft Support: FAQ about Agent Mode in Excel (Frontier)](https://support.microsoft.com/en-us/office/agent-mode-faq)  
+- [Microsoft Tech Community – Excel AI and Agent Mode Discussions](https://techcommunity.microsoft.com/t5/excel/ct-p/Excel_Cat)
+
+---
+
+## Author
+
+Created by **[Olufemi Olamoyegun]**  
+Exploring automation workflows that strengthen Excel’s reliability for financial modeling and validation.
+
