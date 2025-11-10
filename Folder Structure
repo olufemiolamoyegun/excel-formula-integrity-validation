@@ -1,0 +1,13 @@
+excel-formula-integrity-validation/
+│
+├── sample-data/
+│   └── financial_model_validation_sample.xlsx
+│
+├── screenshots/
+│   ├── flow-overview.png
+│   ├── email-output.png
+│
+├── flow-logic/
+│   └── validation-flow.json
+│
+└── README.md
