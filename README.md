@@ -100,7 +100,7 @@ This Power Automate flow helps:
 
 ## References
 
-- [[Microsoft Support: FAQ about Agent Mode in Excel (Frontier)](https://support.microsoft.com/en-us/office/agent-mode-faq)  ](https://support.microsoft.com/en-us/office/frequently-asked-questions-about-agent-mode-in-excel-frontier-1cfd906d-40b4-46be-8e2d-65b893e28a02?utm_source=chatgpt.com)
+- https://support.microsoft.com/en-us/office/frequently-asked-questions-about-agent-mode-in-excel-frontier-1cfd906d-40b4-46be-8e2d-65b893e28a02?utm
 
 
 ---
